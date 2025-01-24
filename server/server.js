@@ -7,6 +7,7 @@ const path = require('path');
 
 const db = require('./config/connection');
 const { typeDefs, resolvers } = require("./schemas");
+const routes = require('./routes')
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -20,6 +21,7 @@ const startApolloServer = async () => {
 
     app.use(express.urlencoded({ extended: false }));
     app.use(express.json());
+    app.use(routes)
 
 
     app.use('/graphql', expressMiddleware(server, {

@@ -22,10 +22,12 @@ const typeDefs = `
 
     type Query {
         users: [User]!
+        getMedia: [Media]
     }
 
     type Mutation {
         createUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth 
+        login(email: String!, password: String!): Auth
     }
     
     `

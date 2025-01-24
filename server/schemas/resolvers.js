@@ -14,7 +14,18 @@ const resolvers = {
             } catch (error) {
                 console.log("Error finding users: ", error)
             }
+        },
+        getMedia: () => {
+            const url = `https://itunes.apple.com/search?term=action&media=podcast&limit=10`
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data)
+                    return data
+                })
+
         }
+
     },
 
     Mutation: {
@@ -26,6 +37,29 @@ const resolvers = {
             } catch (error) {
                 console.log("Error creating user: ", error)
             }
+        },
+        login: async (_, { email, password }) => {
+            // Search for email 
+            try {
+                const user = await User.findOne({ email })
+
+                if (!user) {
+                    throw new Error("Incorrect credentials")
+                }
+                const isCorrectPw = user.isCorrectPassword(password)
+
+                if (!isCorrectPw) {
+                    throw new Error("Incorrect credentials")
+                }
+
+                const token = signToken(user)
+
+                return { token, user }
+
+            } catch (error) {
+                console.error("Error logging in user: ", error)
+            }
+
         }
     }
 }
