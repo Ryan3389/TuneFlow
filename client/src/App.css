@@ -1,0 +1,119 @@
+/* Navbar - Restructure */
+header {
+    border-bottom: 1px solid rgba(245, 245, 245, 0.19);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    font-family: Ember, Helvetica, Arial, "sans-serif";
+}
+
+.nav-left p,
+a,
+.nav-right a {
+    color: #fff;
+}
+
+
+
+.nav-left,
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+.nav-left p,
+a {
+    margin: 0 10px;
+    font-size: 16px;
+}
+
+nav a {
+    text-decoration: none;
+}
+
+.nav-left p {
+    font-size: 1.2rem;
+}
+
+.nav-left a {
+    font-size: 1.2rem;
+}
+
+.nav-right a {
+    font-size: 1.2rem;
+}
+
+nav input[type="search"] {
+    background-color: #fff;
+    margin: 17.6px 0;
+    padding: 8px 60px 8px 24px;
+    border-radius: 10px;
+    border: 1px solid #000;
+}
+
+nav .sign-in-btn {
+    background-color: #25d1da;
+    padding: 8px 12px;
+    border-radius: 10px;
+    color: #000;
+}
+
+/* Navbar Media Queries */
+
+@media only screen and (max-width: 500px) {
+
+    .nav-left p {
+        font-size: 0.8rem
+    }
+
+    .nav-left a {
+        font-size: 0.8rem;
+    }
+
+    nav input[type="search"] {
+        width: 100px;
+        padding: 5px 0;
+    }
+
+    nav .sign-in-btn {
+        font-size: 0.6rem;
+    }
+}
+
+
+@media only screen and (max-width: 700px) {
+
+    .nav-left p {
+        font-size: 0.6rem;
+    }
+
+    .nav-left a,
+    .nav-right a {
+        font-size: 0.6rem;
+    }
+
+    nav input[type="search"] {
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .nav-left p {
+        font-size: 1rem;
+    }
+
+    .nav-left a,
+    .nav-right a {
+        font-size: 0.9rem;
+    }
+}
+
+/* @media screen and(max-width: 500px) {
+    .nav-left p {
+        font-size: 0.6rem;
+    }
+} */
