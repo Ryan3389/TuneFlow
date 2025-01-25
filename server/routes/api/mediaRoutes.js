@@ -7,8 +7,13 @@
 // module.exports = router
 
 const router = require("express").Router()
-const { getMedia } = require("../../controllers/mediaControllers")
+const { searchByArtist } = require("../../controllers/mediaControllers")
+const { searchByMediaType } = require("../../controllers/mediaControllers")
 
-router.route('/').get(getMedia)
+
+router.route('/artist').post(searchByArtist)
+router.route('/type').post(searchByMediaType)
+
+// router.route('/').get(getMedia)
 
 module.exports = router
