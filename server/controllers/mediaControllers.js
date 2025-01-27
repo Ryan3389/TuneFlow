@@ -1,9 +1,9 @@
 const searchByArtist = (req, res) => {
     try {
-        const { artistFirstName, artistLastName } = req.body
+        const { firstName, lastName } = req.query
 
-        const url = ` https://itunes.apple.com/search?term=${artistFirstName}+${artistLastName}&media=music&entity=musicTrack&attribute=artistTerm
-`
+        const url = ` https://itunes.apple.com/search?term=${firstName}+${lastName}&media=music&entity=musicTrack&attribute=artistTerm
+        `
         fetch(url)
             .then(response => response.json())
             .then(data => {

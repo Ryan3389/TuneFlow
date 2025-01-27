@@ -11,8 +11,8 @@ const { searchByArtist } = require("../../controllers/mediaControllers")
 const { searchByMediaType } = require("../../controllers/mediaControllers")
 
 
-router.route('/artist').post(searchByArtist)
-router.route('/type').post(searchByMediaType)
+router.route('/artist').get(searchByArtist)
+router.route('/type').get(searchByMediaType)
 
 // router.route('/').get(getMedia)
 
