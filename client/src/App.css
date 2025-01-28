@@ -123,12 +123,43 @@ nav .sign-in-btn:hover {
     line-height: 1.5;
     /* background: linear-gradient(135deg, #25d1da, #005FCC); */
     background: linear-gradient(135deg, #25d1da, #FF5722);
+}
 
 
+/* Filter Page - Songs by Artists */
 
+.song-container {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-items: center;
+}
+
+.song-img {
+    height: 150px;
 
 }
 
+.song-article {
+    border: 5px solid red;
+    width: 70%;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/*Save Song Button */
+.save-btn {
+    width: 40%;
+    padding: 5px 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    background-color: #25d1da;
+    border: 1px solid #25d1da;
+    cursor: pointer;
+}
 
 footer {
     height: 10vh;
@@ -143,6 +174,10 @@ footer {
     border-radius: 5px;
     margin-top: 20px;
 }
+
+
+
+
 
 /* Navbar Media Queries */
 
