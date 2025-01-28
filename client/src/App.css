@@ -161,6 +161,24 @@ nav .sign-in-btn:hover {
     cursor: pointer;
 }
 
+
+/* Form styles*/
+.form-section {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+
+.form-section input {
+    width: 100%;
+}
+
+form {
+    border: 5px solid red;
+
+}
+
 footer {
     height: 10vh;
     color: whitesmoke;
@@ -174,6 +192,7 @@ footer {
     border-radius: 5px;
     margin-top: 20px;
 }
+
 
 
 

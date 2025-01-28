@@ -8,6 +8,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import HomePage from './pages/HomePage.jsx'
 import MediaPage from './pages/MediaPage.jsx'
+import LoginPage from './pages/LoginPage.jsx'
+import SignupPage from './pages/SignupPage.jsx'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -21,6 +23,14 @@ const router = createBrowserRouter([
       {
         path: '/media',
         element: <MediaPage />
+      },
+      {
+        path: '/login',
+        element: <LoginPage />
+      },
+      {
+        path: '/signup',
+        element: <SignupPage />
       }
     ]
   }

@@ -12,7 +12,7 @@ function Navbar() {
 
                 <span className="nav-right">
                     <input type="search" aria-label="search" />
-                    <a className="sign-in-btn" href="#">Sign In</a>
+                    <Link to='/login' className="sign-in-btn" href="#">Sign In</Link>
                 </span>
             </nav>
         </header>
