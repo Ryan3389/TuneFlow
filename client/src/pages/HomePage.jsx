@@ -4,8 +4,14 @@ import postMalone from '../assets/postMalone.jpg'
 import eltonJohn from '../assets/eltonJohn.jpg'
 import morganWallen from '../assets/morganWallen.jpg'
 import ladyGaga from '../assets/ladyGaga.webp'
+import auth from "../utils/auth";
+
 
 function HomePage() {
+    // USE THIS FOR QUERY USERS 
+    const userId = auth.getToken().data._id
+    console.log(userId)
+
     const artists = [
         { id: 1, firstName: "Taylor", lastName: 'Swift', imgSrc: taylorSwift, altTag: "Taylor Swift Headshot" },
         { id: 2, firstName: "Post", lastName: 'Malone', imgSrc: postMalone, altTag: "Post Malone Headshot" },
