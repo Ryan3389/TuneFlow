@@ -26,3 +26,18 @@ export const LOGIN_USER = gql`
   }
 }
 `
+
+
+export const ADD_MEDIA = gql`
+  mutation Mutation($userId: ID!, $mediaInput: MediaInput!) {
+  addMedia(userId: $userId, mediaInput: $mediaInput) {
+    firstName
+    lastName
+    media {
+      artistName
+      trackName
+      imgUrl
+    }
+  }
+}
+`

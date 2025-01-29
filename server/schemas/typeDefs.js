@@ -1,4 +1,3 @@
-
 const typeDefs = `
     type User {
         _id: ID
@@ -13,9 +12,7 @@ const typeDefs = `
         _id: ID
         artistName: String
         trackName: String
-        kind: String
         imgUrl: String
-        collectionUrl: String
     }
 
     type Auth {
@@ -27,9 +24,7 @@ const typeDefs = `
   input MediaInput{
         artistName: String
         trackName: String,
-        kind: String,
         imgUrl: String,
-        collectionUrl: String
     }
     
     type Query {

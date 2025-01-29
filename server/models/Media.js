@@ -7,13 +7,7 @@ const mediaSchema = new Schema({
     trackName: {
         type: String,
     },
-    kind: {
-        type: String,
-    },
     imgUrl: {
-        type: String,
-    },
-    collectionUrl: {
         type: String,
     },
 });

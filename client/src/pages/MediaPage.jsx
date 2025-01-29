@@ -1,15 +1,47 @@
-import postMalone from '../assets/postMalone.jpg'
+import { ADD_MEDIA } from '../utils/mutations'
+import { useMutation } from '@apollo/client'
+import auth from '../utils/auth'
 import { useEffect, useState } from "react"
 import { useLocation } from "react-router-dom"
 function MediaPage() {
+    // State Variables
     const [artistState, setArtistState] = useState([])
 
+    const [mediaState, setMediaState] = useState({
+        userId: "",
+        mediaInput: ""
+    })
+
+    const [addMedia, { error, data }] = useMutation(ADD_MEDIA)
+    //Query Params 
     const location = useLocation()
     const params = new URLSearchParams(location.search)
 
     const firstName = params.get('firstName')
     const lastName = params.get('lastName')
 
+    const saveSongData = async (song) => {
+        const userId = auth.getToken().data._id
+
+        const mediaInput = {
+            artistName: `${firstName} ${lastName}`,
+            trackName: song.collectionName,
+            imgUrl: song.imgUrl
+        }
+
+        const { data } = await addMedia({
+            variables: {
+                userId,
+                mediaInput
+            }
+        })
+
+        if (data && data.addMedia) {
+            console.log("Song saved successfully")
+        }
+        console.log("User Id: ", userId)
+        console.log("Media Input: ", mediaInput)
+    }
 
     useEffect(() => {
         const getData = async () => {
@@ -33,7 +65,7 @@ function MediaPage() {
                 }));
 
                 setArtistState(updateArtistState)
-                console.log(updateArtistState)
+
             } catch (error) {
                 console.error(error)
             }
@@ -44,10 +76,10 @@ function MediaPage() {
     return (
         <section className="song-container">
             {artistState.map((song, index) => (
-                <article className='song-article'>
+                <article className='song-article' key={index}>
                     <p>{song.collectionName}</p>
                     <img src={song.imgUrl} alt="Post Malone" className='song-img' />
-                    <button className='save-btn'>Save</button>
+                    <button onClick={() => saveSongData(song)} className='save-btn'>Save</button>
                 </article>
             ))}
         </section>
