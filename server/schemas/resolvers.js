@@ -4,26 +4,28 @@
 
 //Correct import 
 const User = require('../models/User')
+const Media = require("../models/Media")
+
 const { signToken, AuthenticationError } = require('../utils/auth')
 
 const resolvers = {
     Query: {
         users: async () => {
             try {
-                return await User.find()
+                return await User.find().populate("media")
             } catch (error) {
                 console.log("Error finding users: ", error)
             }
         },
-        getMedia: () => {
-            const url = `https://itunes.apple.com/search?term=action&media=podcast&limit=10`
-            fetch(url)
-                .then(response => response.json())
-                .then(data => {
-                    console.log(data)
-                    return data
-                })
+        // Finish this later
+        getSingleUser: async (_, { userId }) => {
+            try {
+                return User.findOne({ _id: userId }).populate('media')
 
+
+            } catch (error) {
+                console.log(error)
+            }
         }
 
     },
@@ -60,7 +62,27 @@ const resolvers = {
                 console.error("Error logging in user: ", error)
             }
 
+        },
+
+        addMedia: async (_, { userId, mediaInput }) => {
+            try {
+                // Create new song / media to be saved
+                const savedMedia = await Media.create(mediaInput)
+
+                // Update user -> search by id, add media to array
+                const updatedUser = await User.findByIdAndUpdate(
+                    userId,
+                    { $push: { media: savedMedia._id } },
+                    { new: true }
+                ).populate("media")
+
+                // Return updated user
+                return updatedUser
+            } catch (error) {
+                console.log("Error saving media: ", error)
+            }
         }
+
     }
 }
 

@@ -27,7 +27,8 @@ const userSchema = new Schema({
     },
     media: [
         {
-            type: String
+            type: Schema.Types.ObjectId,
+            ref: 'Media'
         }
     ]
 })
@@ -41,7 +42,7 @@ userSchema.pre('save', async function (next) {
     next()
 })
 
-// Create a method that checks if the password is correct 
+// Create a method that checks if the password is correct
 userSchema.methods.isCorrectPassword = async function (password) {
     await bcrypt.compare(password, this.password);
 }

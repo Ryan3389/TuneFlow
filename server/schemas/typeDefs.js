@@ -1,3 +1,4 @@
+
 const typeDefs = `
     type User {
         _id: ID
@@ -5,10 +6,11 @@ const typeDefs = `
         lastName: String
         email: String
         password: String
-        media: [String]
+        media: [Media]
     }
 
     type Media {
+        _id: ID
         artistName: String
         trackName: String
         kind: String
@@ -21,16 +23,30 @@ const typeDefs = `
         user: User
     }
 
+   
+  input MediaInput{
+        artistName: String
+        trackName: String,
+        kind: String,
+        imgUrl: String,
+        collectionUrl: String
+    }
+    
     type Query {
         users: [User]!
+        getSingleUser(userId: ID!): User
         getMedia: [Media]
     }
 
     type Mutation {
         createUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth 
         login(email: String!, password: String!): Auth
+        addMedia(userId: ID! mediaInput: MediaInput!): User
     }
     
     `
 
 module.exports = typeDefs
+
+
+
