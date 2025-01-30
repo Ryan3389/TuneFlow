@@ -1,24 +1,24 @@
 import { Link } from "react-router";
-import taylorSwift from '../assets/taylorSwift.jpg'
 import postMalone from '../assets/postMalone.jpg'
 import eltonJohn from '../assets/eltonJohn.jpg'
-import morganWallen from '../assets/morganWallen.jpg'
+import brunoMars from '../assets/brunoMars.png'
+import theWeeknd from '../assets/theWeeknd.jpg'
 import ladyGaga from '../assets/ladyGaga.webp'
 import auth from "../utils/auth";
 
 
 function HomePage() {
     const artists = [
-        { id: 1, firstName: "Taylor", lastName: 'Swift', imgSrc: taylorSwift, altTag: "Taylor Swift Headshot" },
+        { id: 1, firstName: "Bruno", lastName: 'Mars', imgSrc: brunoMars, altTag: "Bruno Mars Headshot" },
         { id: 2, firstName: "Post", lastName: 'Malone', imgSrc: postMalone, altTag: "Post Malone Headshot" },
         { id: 3, firstName: "Elton", lastName: 'John', imgSrc: eltonJohn, altTag: "Elton John Headshot" },
-        { id: 4, firstName: "Morgan", lastName: 'Wallen', imgSrc: morganWallen, altTag: "Morgan Wallen Headshot" },
+        { id: 4, firstName: "The", lastName: 'Weeknd', imgSrc: theWeeknd, altTag: "The Weeknd Headshot" },
         { id: 5, firstName: "Lady", lastName: 'Gaga', imgSrc: ladyGaga, altTag: "Lady Gaga Headshot" },
     ]
     return (
         <section className="artist-section">
             <span className='artist-title-span'>
-                <h2>Top Artists</h2>
+                <h2>Top Artists </h2>
             </span>
             <div className='artist-div'>
                 {artists.map((artist) => (
@@ -31,8 +31,8 @@ function HomePage() {
 
             <div className='cta-home'>
                 <p>TuneFlow Music</p>
-                <p>Discover new artists today</p>
-                <p>Start browsing</p>
+                <p>Discover Something New</p>
+                <p>Start Listening</p>
             </div>
         </section>
     )

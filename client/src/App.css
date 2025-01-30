@@ -9,6 +9,7 @@ nav {
     width: 80%;
     margin: auto;
     font-family: Ember, Helvetica, Arial, "sans-serif";
+    height: 10vh;
 }
 
 .nav-left p,
@@ -26,7 +27,6 @@ a,
 
 .nav-left p,
 a {
-    /* margin: 0 10px; */
     margin-right: 20px;
     font-size: 16px;
 }
@@ -48,13 +48,13 @@ nav a {
     margin-left: 20px;
 }
 
-nav input[type="search"] {
+/* nav input[type="search"] {
     background-color: #fff;
     margin: 17.6px 0;
     padding: 8px 60px 8px 24px;
     border-radius: 10px;
     border: 1px solid #000;
-}
+} */
 
 nav .sign-in-btn {
     background-color: #25d1da;
@@ -112,7 +112,7 @@ nav .sign-in-btn:hover {
 .cta-home {
     height: 50%;
     border: 1px solid white;
-    width: 50%;
+    width: 90%;
     margin: auto;
     border-radius: 5px;
     display: flex;
@@ -121,7 +121,6 @@ nav .sign-in-btn:hover {
     align-items: center;
     font-size: 1.5rem;
     line-height: 1.5;
-    /* background: linear-gradient(135deg, #25d1da, #005FCC); */
     background: linear-gradient(135deg, #25d1da, #FF5722);
 }
 
@@ -129,10 +128,11 @@ nav .sign-in-btn:hover {
 /* Filter Page - Songs by Artists */
 
 .song-container {
-    background-color: white;
+    color: #ccc;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
+    margin: 5px 0;
 }
 
 .song-img {
@@ -141,13 +141,19 @@ nav .sign-in-btn:hover {
 }
 
 .song-article {
-    border: 5px solid red;
+    border: 1px solid #cccccc56;
     width: 70%;
     margin: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
 
+.btn-container {
+    border: 1px solid;
 }
 
 /*Save Song Button */
@@ -164,9 +170,11 @@ nav .sign-in-btn:hover {
 
 /* Form styles*/
 .form-section {
-    background-color: white;
     display: flex;
     justify-content: center;
+    color: whitesmoke;
+    height: 70vh;
+    align-items: center;
 }
 
 
@@ -175,9 +183,44 @@ nav .sign-in-btn:hover {
 }
 
 form {
-    border: 5px solid red;
-
+    /* border: 1px solid rgba(245, 245, 245, 0.19); */
+    text-align: center;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
 }
+
+form a {
+    text-decoration: none;
+    font-size: 1.1rem;
+}
+
+form input {
+    padding: 8px 16px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+form input[type="submit"] {
+    width: 80%;
+    margin: auto;
+    background-color: #25d1da;
+    padding: 8px 16px;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background: linear-gradient(135deg, #1CAAB9, #148D9F);
+}
+
+form .input-div {
+    padding: 10px 20px;
+}
+
+
 
 footer {
     height: 10vh;
@@ -188,9 +231,8 @@ footer {
     background-color: #25d1da50;
     border: 1px solid#25d1da;
     width: 90%;
-    margin: auto;
     border-radius: 5px;
-    margin-top: 20px;
+    margin: 20px auto 20px auto
 }
 
 
@@ -198,7 +240,7 @@ footer {
 
 
 
-/* Navbar Media Queries */
+/* Media Queries */
 
 @media only screen and (max-width: 500px) {
 
@@ -216,7 +258,17 @@ footer {
     }
 
     nav .sign-in-btn {
-        font-size: 0.6rem;
+        font-size: 0.5rem;
+    }
+
+    .artist-img {
+        width: 80px;
+    }
+
+
+    .song-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -236,6 +288,21 @@ footer {
     nav input[type="search"] {
         width: 60%;
     }
+
+    .song-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .song-article {
+        width: 80%;
+    }
+
+    .artist-img {
+        width: 100px;
+    }
+
+
 }
 
 @media only screen and (max-width: 900px) {
@@ -247,4 +314,24 @@ footer {
     .nav-right a {
         font-size: 0.9rem;
     }
+
+    .artist-img {
+        width: 120px;
+    }
+
+    .song-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }
+
+
+
+/* Media Queries for filter by artist page*/
+/* 
+@media only screen and (max-width: 500px) {
+    .song-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+} */

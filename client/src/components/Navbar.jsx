@@ -11,13 +11,11 @@ function Navbar() {
                 <nav>
                     <span className="nav-left">
                         <p>TuneFlow</p>
-                        <Link to='/'>Home</Link>
-                        <Link>Movies</Link>
-                        <Link>Podcasts</Link>
                     </span>
 
                     <span className="nav-right">
-                        <input type="search" aria-label="search" />
+                        <Link to='/'>Home</Link>
+                        <a target="_blank" href="https://github.com/Ryan3389">GitHub</a>
                         <Link onClick={handleLogout} className="sign-in-btn">Logout</Link>
                     </span>
                 </nav>
@@ -25,13 +23,11 @@ function Navbar() {
                 <nav>
                     <span className="nav-left">
                         <p>TuneFlow</p>
-                        <Link to='/'>Home</Link>
-                        <Link>Movies</Link>
-                        <Link>Podcasts</Link>
                     </span>
 
                     <span className="nav-right">
-                        <input type="search" aria-label="search" />
+                        <Link to='/'>Home</Link>
+                        <a target="_blank" href="https://github.com/Ryan3389">GitHub</a>
                         <Link to='/login' className="sign-in-btn">Sign in</Link>
                     </span>
                 </nav>

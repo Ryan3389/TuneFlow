@@ -3,7 +3,7 @@ function Form({ inputFields, submitBtnText, redirectText, linkPath, formData, on
     return (
         <form onSubmit={formSubmit}>
             {inputFields.map((field, index) => (
-                <div key={index}>
+                <div className="input-div" key={index}>
                     <label htmlFor={field.name}>{field.label}</label>
                     <input
                         type={field.type}
@@ -15,7 +15,7 @@ function Form({ inputFields, submitBtnText, redirectText, linkPath, formData, on
                     />
                 </div>
             ))}
-            <Link to={linkPath}>{redirectText}</Link>
+            <Link className="redirect-text" to={linkPath}>{redirectText}</Link>
             <input type="submit" value={submitBtnText} />
         </form>
     )
