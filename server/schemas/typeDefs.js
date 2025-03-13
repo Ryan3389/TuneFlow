@@ -37,6 +37,7 @@ const typeDefs = `
         createUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth 
         login(email: String!, password: String!): Auth
         addMedia(userId: ID! mediaInput: MediaInput!): User
+        removeMedia(userId: ID! mediaId: ID!): User
     }
     
     `

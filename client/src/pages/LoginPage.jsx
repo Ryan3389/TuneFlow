@@ -8,6 +8,7 @@ function LoginPage() {
         email: '',
         password: ''
     })
+    const [errorMsg, setErrorMsg] = useState(null)
 
     const [loginUser, { error, data }] = useMutation(LOGIN_USER)
 
@@ -26,11 +27,14 @@ function LoginPage() {
                 variables: { ...formState }
             })
 
+
+
             if (data && data.login) {
                 auth.login(data.login.token)
             }
 
         } catch (error) {
+            setErrorMsg(error)
             console.error("Error logging in: ", error)
         }
     }

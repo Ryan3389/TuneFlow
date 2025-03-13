@@ -15,7 +15,8 @@ function Navbar() {
 
                     <span className="nav-right">
                         <Link to='/'>Home</Link>
-                        <a target="_blank" href="https://github.com/Ryan3389">GitHub</a>
+                        <Link to="/dashboard">Browse Music</Link>
+                        <Link to='/saved'>Favourites</Link>
                         <Link onClick={handleLogout} className="sign-in-btn">Logout</Link>
                     </span>
                 </nav>
@@ -27,7 +28,6 @@ function Navbar() {
 
                     <span className="nav-right">
                         <Link to='/'>Home</Link>
-                        <a target="_blank" href="https://github.com/Ryan3389">GitHub</a>
                         <Link to='/login' className="sign-in-btn">Sign in</Link>
                     </span>
                 </nav>

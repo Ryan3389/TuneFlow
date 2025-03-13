@@ -10,6 +10,8 @@ import HomePage from './pages/HomePage.jsx'
 import MediaPage from './pages/MediaPage.jsx'
 import LoginPage from './pages/LoginPage.jsx'
 import SignupPage from './pages/SignupPage.jsx'
+import LandingPage from './pages/LandingPage.jsx'
+import SavedPage from './pages/SavedPage.jsx'
 const router = createBrowserRouter([
   {
     path: '/',
@@ -18,6 +20,10 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
+        element: <LandingPage />
+      },
+      {
+        path: '/dashboard',
         element: <HomePage />
       },
       {
@@ -31,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: '/signup',
         element: <SignupPage />
+      },
+      {
+        path: '/saved',
+        element: <SavedPage />
       }
     ]
   }

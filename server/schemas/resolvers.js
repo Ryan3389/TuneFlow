@@ -81,9 +81,24 @@ const resolvers = {
             } catch (error) {
                 console.log("Error saving media: ", error)
             }
+        },
+
+        removeMedia: async (_, { userId, mediaId }) => {
+            try {
+                const updatedUser = await User.findByIdAndUpdate(
+                    userId,
+                    { $pull: { media: mediaId } },
+                    { new: true }
+                ).populate("media")
+
+                return updatedUser
+            } catch (error) {
+                console.error('Error removing media', error)
+            }
         }
 
     }
+
 }
 
 module.exports = resolvers

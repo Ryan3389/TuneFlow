@@ -41,3 +41,17 @@ export const ADD_MEDIA = gql`
   }
 }
 `
+
+export const REMOVE_MEDIA = gql`
+mutation Mutation($userId: ID!, $mediaId: ID!) {
+  removeMedia(userId: $userId, mediaId: $mediaId) {
+    media {
+      _id
+      artistName
+      trackName
+      imgUrl
+    }
+  }
+}
+
+`

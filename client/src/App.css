@@ -28,7 +28,6 @@ a,
 .nav-left p,
 a {
     margin-right: 20px;
-    font-size: 16px;
 }
 
 nav a {
@@ -48,13 +47,7 @@ nav a {
     margin-left: 20px;
 }
 
-/* nav input[type="search"] {
-    background-color: #fff;
-    margin: 17.6px 0;
-    padding: 8px 60px 8px 24px;
-    border-radius: 10px;
-    border: 1px solid #000;
-} */
+
 
 nav .sign-in-btn {
     background-color: #25d1da;
@@ -68,35 +61,108 @@ nav .sign-in-btn:hover {
 
 }
 
-/* artist section - home page */
-.artist-img {
-    height: 140px;
-    /* possibly remove line below*/
-    width: 170px;
-    border-radius: 100px;
-    object-fit: contain;
-    cursor: pointer;
+/* Saved Page */
+
+.saved-section {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 70vh;
+    color: white;
+    width: 80%;
+    margin: 10px auto;
+    gap: 10px;
+
 }
 
-.artist-section {
+.saved-artist {
+    border: 1px solid rgba(255, 255, 255, 0.424);
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+
+    line-height: 1.5;
+}
+
+.remove-btn {
+    background-color: #25d1da;
+    padding: 3px 6px;
+    border: none;
+    border-radius: 5px;
+}
+
+
+
+.fav-artist {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Hero Section */
+.hero-section {
+    height: 70vh;
+    color: whitesmoke;
     display: flex;
     justify-content: center;
-    flex-direction: column;
-    color: #fff;
-    margin-top: 30px;
-    height: 70vh;
-
+    align-items: center;
+    text-align: center;
+    line-height: 1.5;
 }
 
+.hero-section h1 {
+    font-size: 2.2125rem
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    margin-bottom: 10px
+}
+
+.browse-btn {
+    padding: 8px 16px;
+    border-radius: 5px;
+    background-color: #1CAAB9;
+    color: #000;
+    font-size: 1.2rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+
+/* artist section - home page */
+
+
+.artist-section {
+    height: 70vh;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.artist-section a {
+    background-color: #1CAAB9;
+    color: #000;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
 
 
 .artist-div {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+    align-items: center;
     width: 80%;
-    margin: auto;
-    height: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    height: 40%;
 }
+
 
 .artist-title-span {
     width: 80%;
@@ -106,6 +172,7 @@ nav .sign-in-btn:hover {
 .artist-title-span h2 {
     font-size: 1.7rem;
     padding-bottom: 20px;
+    margin-top: 10px;
 }
 
 
@@ -242,96 +309,116 @@ footer {
 
 /* Media Queries */
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 1200px) {
 
-    .nav-left p {
-        font-size: 0.8rem
-    }
-
-    .nav-left a {
-        font-size: 0.8rem;
-    }
-
-    nav input[type="search"] {
-        width: 100px;
-        padding: 5px 0;
-    }
-
-    nav .sign-in-btn {
-        font-size: 0.5rem;
-    }
-
-    .artist-img {
-        width: 80px;
-    }
-
-
-    .song-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-
-
-@media only screen and (max-width: 700px) {
-
-    .nav-left p {
-        font-size: 0.6rem;
-    }
-
-    .nav-left a,
-    .nav-right a {
-        font-size: 0.6rem;
-    }
-
-    nav input[type="search"] {
-        width: 60%;
-    }
-
-    .song-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .song-article {
-        width: 80%;
-    }
-
-    .artist-img {
-        width: 100px;
-    }
-
-
-}
-
-@media only screen and (max-width: 900px) {
-    .nav-left p {
-        font-size: 1rem;
-    }
-
-    .nav-left a,
+    .nav-left p,
     .nav-right a {
         font-size: 0.9rem;
     }
 
-    .artist-img {
-        width: 120px;
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+
+    .browse-btn {
+        font-size: 1rem;
     }
 
     .song-container {
         display: grid;
         grid-template-columns: 1fr 1fr;
+    }
+
+    .saved-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cta-home {
+        font-size: 1.2rem
+    }
+
+    .artist-div a {
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+
+    .nav-left p,
+    .nav-right a {
+        font-size: 0.7rem
+    }
+
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    .browse-btn {
+        font-size: 0.8rem;
+    }
+
+    .song-container {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .saved-section {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+
+    .song-img {
+        height: 100px;
+    }
+
+    .cta-home {
+        font-size: 1rem;
+        height: 30%;
+    }
+
+    .artist-div a {
+        font-size: 0.7rem;
     }
 }
 
 
 
-/* Media Queries for filter by artist page*/
-/* 
-@media only screen and (max-width: 500px) {
-    .song-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
+@media only screen and (max-width: 600px) {
+
+    .nav-left p,
+    .nav-right a {
+        font-size: 0.5rem;
+        font-weight: bold
     }
-} */
+
+    .hero-section h1 {
+        font-size: 1.7rem;
+    }
+
+    .hero-section p {
+        font-size: 0.8rem;
+    }
+
+    .browse-btn {
+        font-size: 0.8rem;
+    }
+
+    .cta-home {
+        font-size: 0.9rem;
+        height: 20%;
+    }
+
+    .artist-div a {
+        font-size: 0.5rem;
+    }
+}
